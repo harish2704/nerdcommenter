@@ -510,7 +510,9 @@ function s:SetUpForNewFiletype(filetype, forceReset)
         endfor
     endif
 
-    let b:NERDSexyComMarker = ''
+    if !exists('b:NERDSexyComMarker' )
+      let b:NERDSexyComMarker = ''
+    endif
 
     if has_key(s:delimiterMap, ft)
         let b:NERDCommenterDelims = s:delimiterMap[ft]
